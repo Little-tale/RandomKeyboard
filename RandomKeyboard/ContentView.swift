@@ -88,7 +88,9 @@ extension ContentView {
     
     private func cancelButtonView() -> some View {
         Button {
-            input.removeLast()
+            if !input.isEmpty {
+                input.removeLast()
+            }
         } label: {
             Image(systemName: "eraser.fill")
                 .frame(width: 80, height: 80)
